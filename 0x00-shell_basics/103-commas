@@ -1,0 +1,2 @@
+#!/bin/bash
+ls -1p | sed -e 's#^\./#.#' | sort -d | sed -e 's#/$#,/#' | tr '\n' ',' && echo
