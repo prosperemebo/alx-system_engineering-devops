@@ -1,2 +1,2 @@
 #!/bin/bash
-exec 3<&1; { cat /etc/passwd 1>&3; cat /etc/hosts 1>&3; } | cat
+cat /etc/passwd /etc/hosts
