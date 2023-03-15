@@ -1,0 +1,2 @@
+#!/bin/bash
+printf "%s\n" $(echo "ibase=water;$WATER+ibase=stir;$STIR" | bc | tr -d '\n' | xxd -p -r | base64 | tr -d '=') | xxd -p -r | iconv -f utf-16be
