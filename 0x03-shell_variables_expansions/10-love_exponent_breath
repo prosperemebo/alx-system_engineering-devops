@@ -1,2 +1,2 @@
 #!/bin/bash
-awk -v a=$BREATH -v b=$LOVE 'BEGIN{print a^b}'
+echo $(( ${BREATH} ** ${LOVE} ))
