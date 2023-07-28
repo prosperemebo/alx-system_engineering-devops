@@ -2,9 +2,7 @@
 # This script displays the content of the current directory in a list format
 
 for file in $(ls -A); do
-    # Check if the file is not a directory and contains a dash
     if [ ! -d "$file" ] && [[ "$file" == *-* ]]; then
-        # Extract the part of the name after the first dash and display it
         name_after_dash=${file#*-}
         echo "$name_after_dash"
     fi
