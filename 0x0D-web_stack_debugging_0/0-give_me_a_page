@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# Get Apache running again
+service apache2 start
