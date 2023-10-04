@@ -4,7 +4,7 @@
 sudo apt-get -y update
 sudo apt-get -y install haproxy
 
-lines="\nfrontend my_frontend\n\tbind *:80\n\tdefault_backend alx_backend\n\nbackend alx_backend\n\tbalance roundrobin\n\tserver 356630-web-01 34.229.70.230:80 check\n\tserver 356630-web-02 34.229.70.230:80 check"
+lines="\nfrontend my_frontend\n\tbind *:80\n\tdefault_backend alx_backend\n\nbackend alx_backend\n\tbalance roundrobin\n\tserver 356630-web-01 54.172.59.160:80 check\n\tserver 356630-web-02 34.229.70.230:80 check"
 
 sudo echo -e $lines >> /etc/haproxy/haproxy.cfg
 
