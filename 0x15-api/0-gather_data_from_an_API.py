@@ -1,8 +1,5 @@
 #!/usr/bin/python3
-"""
-This script fetches data JSON Placeholder,
-returns information about their todo list progress.
-"""
+""" This script fetches data JSON Placeholder """
 
 import requests
 from sys import argv
