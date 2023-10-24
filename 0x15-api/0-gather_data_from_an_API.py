@@ -21,9 +21,13 @@ def main(user_id):
 
     print("Employee {} is done with tasks({}/{}):"
           .format(user.get('name'), len(done_tasks), len(todos)))
+    
+    final_string = ""
 
     for title in done_tasks:
-        print("\t {}\n".format(title))
+        final_string += "\t {}\n".format(title)
+        
+    print(final_string)
 
 
 if __name__ == "__main__":
