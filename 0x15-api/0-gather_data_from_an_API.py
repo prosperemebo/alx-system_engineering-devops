@@ -26,7 +26,7 @@ def main(user_id):
           .format(user.get('name'), len(done_tasks), len(todos)))
 
     for title in done_tasks:
-        print("\t {}".format(title))
+        print("\t {}\n".format(title))
 
 
 if __name__ == "__main__":
