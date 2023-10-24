@@ -1,27 +1,33 @@
 #!/usr/bin/python3
 """
 This script fetches data JSON Placeholder,
-returns information about their TODO list progress.
+returns information about their todo list progress.
 """
 
 import requests
 from sys import argv
 
-if __name__ == "__main__":
+
+def main(user_id):
     url = "https://jsonplaceholder.typicode.com"
-    name = (requests.get(
-        "{}/users/{}".format(url, argv[1])).json().get("name"))
-    todos = requests.get("{}/user/{}/todos".format(url, argv[1])).json()
+    user_endpoint = f"{url}/users/{user_id}"
+    todos_endpoint = f"{url}/users/{user_id}/todos"
 
-    done_titles = []
-    done_number = 0
+    user = requests.get(user_endpoint).json()
+    todos = requests.get(todos_endpoint).json()
 
-    for todo in todos:
-        if todo.get("completed"):
-            done_number += 1
-            done_titles.append(todo.get("title"))
+    done_tasks = []
+
+    for task in todos:
+        if task.get("completed"):
+            done_tasks.append(task.get("title"))
 
     print("Employee {} is done with tasks({}/{}):"
-          .format(name, done_number, len(todos)))
-    for title in done_titles:
+          .format(user.get('name'), len(done_tasks), len(todos)))
+
+    for title in done_tasks:
         print("\t {}".format(title))
+
+
+if __name__ == "__main__":
+    main(argv[1])
