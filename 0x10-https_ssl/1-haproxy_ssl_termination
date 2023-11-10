@@ -41,5 +41,5 @@ frontend my_frontend
 
 backend alx_backend
         balance roundrobin
-        server 356630-web-01 54.172.59.160:80 check
-        server 356630-web-02 34.229.70.230:80 check
+        server 356630-web-01 100.25.16.172:80 check
+        server 356630-web-02 52.73.254.93:80 check
